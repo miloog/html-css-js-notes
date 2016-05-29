@@ -1,0 +1,181 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 10px; /* chrome had 8px by default */
+    padding: 0;
+    font-family: Helvetica, sans-serif;
+    text-align: justify;
+    color: #555;
+}
+
+header {
+    padding: 20px;
+    color: #444;
+    text-align: center;
+    font-family: Georgia, serif;
+    font-size: 1.75em;
+    margin-bottom: 8px;
+}
+
+.row {
+    /* The negative margins here ensure the align
+     * of the responsive columns with the normal
+     * content, is the same of the columns padding.
+     */
+    margin-left: -5px;
+    margin-right: -5px;
+    margin-bottom: 30px; /* The .box padding-top minus columns
+                          * margin bottom. It makes a consistent space
+                          * equal to .box padding-top.
+                          */
+    display: inline-block; /* This is important, the .row div will
+                            * fill its height according to the content.
+                            * Otherwise, there will be problems because
+                            * all its internal elements are floating
+                            * and their spot is not conserved.
+                            */
+}
+
+.box {
+    position: relative;
+    width: 100%;
+    padding: 8px;
+    padding-top: 40px; /* This makes the space for the title.*/
+    border: 2px solid #444;
+}
+
+p {
+    margin: 0;
+}
+
+.box-title {
+    font-size: 1.25em;
+    font-family: Georgia, serif;
+    position: absolute;
+    top: -2px;
+    right: -2px;
+    padding: 2px;
+    border: 2px solid #444;
+    color: #333;
+    padding: 4px;
+}
+
+/* RESPONSIVE
+ * for this propose it has been generated
+ * a grid sistem based on 6 columns,
+ * as you can see on the media query.
+ */
+
+/* just if the screen is too big */
+@media (min-width: 1201px){
+    body {
+        width: 1200px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+/* desktop */
+@media (min-width: 992px) {
+    .b-lg-1,
+    .b-lg-2,
+    .b-lg-3,
+    .b-lg-4,
+    .b-lg-5,
+    .b-lg-6{
+        padding-left: 5px;
+        padding-right: 5px; /* this ensures that there
+                             * is 8px betwen each colon.
+                             */
+        float: left;
+        margin-bottom: 10px; /* this ensures 8px betwen the
+                              * columns when their colapse.
+                              */
+    }
+    .b-lg-1 {
+        width : 16.6666%;
+    }
+    .b-lg-2 {
+        width : 33.3333%;
+    }
+    .b-lg-3 {
+        width : 50%;
+    }
+    .b-lg-4 {
+        width : 66.6666%;
+    }
+    .b-lg-5 {
+        width : 83.3333%;
+    }
+    .b-lg-6 {
+        width : 100%;
+    }
+}
+
+/* tablet */
+@media (min-width: 768px) and (max-width: 991px) {
+    .b-lg-1,
+    .b-lg-2,
+    .b-lg-3,
+    .b-lg-4,
+    .b-lg-5,
+    .b-lg-6{
+        float: left;
+        padding-left: 5px;
+        padding-right: 5px;
+        margin-bottom: 10px;
+    }
+    .b-md-1 {
+        width : 16.6666%;
+    }
+    .b-md-2 {
+        width : 33.3333%;
+    }
+    .b-md-3 {
+        width : 50%;
+    }
+    .b-md-4 {
+        width : 66.6666%;
+    }
+    .b-md-5 {
+        width : 83.3333%;
+    }
+    .b-md-6 {
+        width : 100%;
+    }
+}
+
+/* phone */
+@media (max-width: 767px) {
+    .b-lg-1,
+    .b-lg-2,
+    .b-lg-3,
+    .b-lg-4,
+    .b-lg-5,
+    .b-lg-6{
+        float: left;
+        padding-left: 5px;
+        padding-right: 5px;
+        margin-bottom: 10px;
+    }
+    .b-sm-1 {
+        width : 16.6666%;
+    }
+    .b-sm-2 {
+        width : 33.3333%;
+    }
+    .b-sm-3 {
+        width : 50%;
+    }
+    .b-sm-4 {
+        width : 66.6666%;
+    }
+    .b-sm-5 {
+        width : 83.3333%;
+    }
+    .b-sm-6 {
+        width : 100%;
+    }
+}
