@@ -7,30 +7,45 @@ body {
     padding: 0;
     font-family: Helvetica, sans-serif;
     text-align: justify;
-    color: #555;
-}
-
-body > div {
-    margin-bottom: 28px;
+    color: #333;
 }
 
 header {
-    padding: 20px;
-    color: #444;
     text-align: center;
-    font-family: Georgia, serif;
-    font-size: 1.75em;
+    padding: 10px;
     margin-bottom: 8px;
 }
 
+footer {
+    text-align: center;
+    padding: 10px;
+    margin-top: 8px;
+    font-size: 0.80em;
+}
+
+h1, h2 {
+    color: #333;
+    font-family: "Times New Roman", Times, serif;
+}
+
+h1 {
+    font-size: 1.75em;
+}
+
+h2 {
+    font-size: 1.25em;
+}
+
 .row {
-    /* The negative margins here ensure the align
+    /* The -5px negative margins here ensure the align
      * of the responsive columns with the normal
      * content, is the same of the columns padding.
      */
     margin-left: -5px;
     margin-right: -5px;
-    margin-bottom: 28px;
+    margin-bottom: -10px; /* This margin removes the margin-bottom
+                           * added for the column.
+                           */
     display: inline-block; /* This is important, the .row div will
                             * fill its height according to the content.
                             * Otherwise, there will be problems because
@@ -43,24 +58,22 @@ header {
     position: relative;
     width: 100%;
     padding: 8px;
-    padding-top: 40px; /* This makes the space for the title.*/
-    border: 2px solid #444;
+    padding-top: 23px; /* This makes the space for the title.*/
+    border: 2px solid #333;
 }
 
-p {
-    margin: 0;
+.box > p {
+    margin-bottom: 0;
 }
 
 .box-title {
-    font-size: 1.25em;
-    font-family: Georgia, serif;
+    text-align: center;
     position: absolute;
     top: -2px;
     right: -2px;
-    padding: 2px;
-    border: 2px solid #444;
-    color: #333;
+    border: 2px solid #333;
     padding: 4px;
+    margin: 0;
 }
 
 .row div:nth-child(1) .box-title {
@@ -80,9 +93,9 @@ p {
  */
 
 /* just if the screen is too big */
-@media (min-width: 1201px){
+@media (min-width: 1101px){
     body {
-        width: 1200px;
+        width: 1100px;
         margin-left: auto;
         margin-right: auto;
     }
