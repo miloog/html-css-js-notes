@@ -1,19 +1,20 @@
 * {
     box-sizing: border-box;
-}
-
-body {
-    margin: 10px; /* chrome had 8px by default */
-    padding: 0;
-    font-family: Helvetica, sans-serif;
-    text-align: justify;
-    color: #333;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
 }
 
 header {
     text-align: center;
     padding: 10px;
     margin-bottom: 8px;
+}
+
+body {
+    margin: 20px; /* chrome had 8px by default */
+    padding: 0;
+    font-family: Helvetica, sans-serif;
+    color: #333;
 }
 
 footer {
@@ -36,46 +37,31 @@ h2 {
     font-size: 1.25em;
 }
 
-.row {
-    /* The -5px negative margins here ensure the align
-     * of the responsive columns with the normal
-     * content, is the same of the columns padding.
-     */
-    margin-left: -5px;
-    margin-right: -5px;
-    margin-bottom: -10px; /* This margin removes the margin-bottom
-                           * added for the column.
-                           */
-    display: inline-block; /* This is important, the .row div will
-                            * fill its height according to the content.
-                            * Otherwise, there will be problems because
-                            * all its internal elements are floating
-                            * and their spot is not conserved.
-                            */
-}
-
+/* BOXES
+ * ----------------------------------------------------------
+ */
 .box {
     position: relative;
     width: 100%;
-    padding: 8px;
+    padding: 10px;
     padding-top: 23px; /* This makes the space for the title.*/
     border: 2px solid #333;
 }
-
-.box > p {
+.box > * {
     margin-bottom: 0;
 }
-
 .box-title {
     text-align: center;
     position: absolute;
     top: -2px;
     right: -2px;
     border: 2px solid #333;
-    padding: 4px;
+    padding: 2px;
+    padding-left: 15px;
+    padding-right: 15px;
     margin: 0;
 }
-
+/* Box titles colors */
 .row div:nth-child(1) .box-title {
     background: #d9534f;
 }
@@ -87,36 +73,33 @@ h2 {
 }
 
 /* RESPONSIVE
+ * ----------------------------------------------------------
  * for this propose it has been generated
  * a grid sistem based on 6 columns,
  * as you can see on the media query.
  */
-
-/* just if the screen is too big */
-/*@media (min-width: 1101px){
-    body {
-        width: 1100px;
-        margin-left: auto;
-        margin-right: auto;
-    }
-}*/
+.row {
+    margin-left: -10px;
+    margin-right: -10px;
+    display: inline-block; /* This is important, the .row div will
+                            * fill its height according to the content.
+                            * Otherwise, there will be problems because
+                            * all its internal elements are floating
+                            * and their spot is not conserved.
+                            */
+}
+[class*="col-"] {
+    padding: 10px;
+    float: left;
+}
 
 /* desktop */
 @media (min-width: 992px) {
-    .col-lg-1,
-    .col-lg-2,
-    .col-lg-3,
-    .col-lg-4,
-    .col-lg-5,
-    .col-lg-6{
-        padding-left: 5px;
-        padding-right: 5px; /* this ensures that there
-                             * is 8px betwen each colon.
-                             */
-        float: left;
-        margin-bottom: 10px; /* this ensures 8px betwen the
-                              * columns when their colapse.
-                              */
+    .lg-eq-height {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display:         flex;
     }
     .col-lg-1 {
         width : 16.6666%;
@@ -140,16 +123,11 @@ h2 {
 
 /* tablet */
 @media (min-width: 768px) and (max-width: 991px) {
-    .col-lg-1,
-    .col-lg-2,
-    .col-lg-3,
-    .col-lg-4,
-    .col-lg-5,
-    .col-lg-6{
-        float: left;
-        padding-left: 5px;
-        padding-right: 5px;
-        margin-bottom: 10px;
+    .md-eq-height {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display:         flex;
     }
     .col-md-1 {
         width : 16.6666%;
@@ -173,33 +151,28 @@ h2 {
 
 /* phone */
 @media (max-width: 767px) {
-    .col-lg-1,
-    .col-lg-2,
-    .col-lg-3,
-    .col-lg-4,
-    .col-lg-5,
-    .col-lg-6{
-        float: left;
-        padding-left: 5px;
-        padding-right: 5px;
-        margin-bottom: 10px;
+    .sm-eq-height {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display:         flex;
     }
     .col-sm-1 {
-        width : 16.6666%;
+        width: 16.6666%;
     }
     .col-sm-2 {
-        width : 33.3333%;
+        width: 33.3333%;
     }
     .col-sm-3 {
-        width : 50%;
+        width: 50%;
     }
     .col-sm-4 {
-        width : 66.6666%;
+        width: 66.6666%;
     }
     .col-sm-5 {
-        width : 83.3333%;
+        width: 83.3333%;
     }
     .col-sm-6 {
-        width : 100%;
+        width: 100%;
     }
 }
