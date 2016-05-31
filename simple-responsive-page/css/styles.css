@@ -45,6 +45,7 @@ h2 {
     width: 100%;
     padding: 10px;
     padding-top: 23px; /* This makes the space for the title.*/
+    background: #eee;
     border: 2px solid #333;
 }
 .box > * {
