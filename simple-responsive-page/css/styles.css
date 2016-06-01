@@ -87,6 +87,8 @@ h2 {
                             * Otherwise, there will be problems because
                             * all its internal elements are floating
                             * and their spot is not conserved.
+                            *
+                            * Alternative > clear:both; on the next div.
                             */
 }
 [class*="col-"] {
